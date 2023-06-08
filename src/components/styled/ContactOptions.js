@@ -16,7 +16,6 @@ const ContactOptions = () => {
       <Ul>
         <Li><WebLink href="https://github.com/Sovak3441" target="_blank" rel="noreferrer"><FiLink size="1rem" /> Github - Kjell-Arne</WebLink></Li>
         <Li><WebLink href="https://www.linkedin.com/in/kjell-arne-neshagen-83152222b/" target="_blank" rel="noreferrer"><FiLink size="1rem" /> LinkedIn - Kjell-Arne</WebLink></Li>
-        <Li><WebLink href="https://www.facebook.com/xorzizten/" target="_blank" rel="noreferrer"><FiLink size="1rem" /> Facebook - Kjell-Arne</WebLink></Li>
       </Ul>
     </ListWrapper>
   );

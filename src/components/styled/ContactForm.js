@@ -12,19 +12,13 @@ const TextArea = tw.textarea`shadow appearance-none border rounded w-full py-2 p
 const Button = tw.button`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none disabled:bg-dark`;
 
 const ContactForm = () => {
-
-  const submitButton = document.querySelector("#submitButton");
-  const InputName = document.querySelector("#name");
-  const InputEmail = document.querySelector("#email");
-  const InputMessage = document.querySelector("#message");
-  const InputNameError = document.querySelector("#nameError");
-  const InputEmailError = document.querySelector("#emailError");
-  const InputMessageError = document.querySelector("#messageError");
-  const FormSubmitError = document.querySelector("#formError");
-
-  const handleValidation = (event) => {
-    const currField = event.target.id;
-    const currValue = event.target.value;
+  const handleValidation = (element) => {
+    const submitButton = document.querySelector("#submitButton");
+    const InputNameError = document.querySelector("#nameError");
+    const InputEmailError = document.querySelector("#emailError");
+    const InputMessageError = document.querySelector("#messageError");
+    const currField = element.target.id;
+    const currValue = element.target.value;
 
     const validMail = (address) => {
       return String(address)
@@ -74,34 +68,44 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO - Create form handler
+    const submitButton = document.querySelector("#submitButton");
+    const ContactForm = document.querySelector("#contact_form");
+    submitButton.disabled = true;
+    const InputName = document.querySelector("#name");
+    const InputEmail = document.querySelector("#email");
+    const InputMessage = document.querySelector("#message");
+
+    const FormSubmitError = document.querySelector("#formError");
+    // TODO - Fix Validation Handler
     if(InputName.value === "" || InputEmail.value === "" || InputMessage.value === "") {
       FormSubmitError.textContent = "Please fill out all fields";
       FormSubmitError.style.display = "flex";
+      submitButton.disabled = false;
     } else {
       FormSubmitError.style.display = "none";
       FormSubmitError.textContent = "";
+      ContactForm.reset();
     }
   };
 
   return (
     <FormWrapper>
-      <Form onSubmit={handleSubmit}>
+      <Form id="contact_form" onSubmit={handleSubmit}>
         <FormTitle>Send E-mail</FormTitle>
         <FormError id="formError"></FormError>
         <FormGroup>
           <Label htmlFor="name">Name</Label>
-          <Input onKeyUp={handleValidation} type="text" id="name" placeholder="Enter your name"/>
+          <Input onChange={handleValidation} type="text" id="name" placeholder="Enter your name"/>
           <InputError id="nameError"></InputError>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
-          <Input onKeyUp={handleValidation} type="email" id="email" placeholder="Enter your email"/>
+          <Input onChange={handleValidation} type="email" id="email" placeholder="Enter your email"/>
           <InputError id="emailError"></InputError>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="message">Message</Label>
-          <TextArea onKeyUp={handleValidation} id="message" rows="4" placeholder="Enter your message"></TextArea>
+          <TextArea onChange={handleValidation} id="message" rows="4" placeholder="Enter your message"></TextArea>
           <InputError id="messageError"></InputError>
         </FormGroup>
         <Button id="submitButton" type="submit">Submit</Button>

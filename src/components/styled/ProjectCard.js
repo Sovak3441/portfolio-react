@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 
-const Wrapper = tw.div`w-96 bg-main-background text-light rounded-md shadow-md overflow-hidden m-5`;
+const Wrapper = tw.div`flex flex-col justify-between xl:w-96 w-3/4 bg-main-background text-light rounded-md shadow-md overflow-hidden m-5`;
 const PreviewPhoto = tw.img`w-full h-80 object-cover`;
 const CardContent = tw.div`p-4`;
 const Title = tw.h3`text-lg font-semibold mb-2`;
