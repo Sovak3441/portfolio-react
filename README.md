@@ -1,18 +1,42 @@
-# Getting Started with Create React App
+# Kjell-Arne Neshagen - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A project site for offering healthy food to working people.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project was built to be my personal portfolio. 
+It contains a one page site, with the following sections:
 
-### `npm start`
+- About Me
+- My Portfolio
+- Contact Me
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This site is build using React.js and Tailwindcss. 
+
+The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:Sovak3441/portfolio-react.git
+```
+### Running
+
+1. Navigate to the cloned folder and run:
+```bash
+npm install
+```
+2. Start the project in development mode using:
+```bash
+npm start
+```
+### Available Scripts
 
 ### `npm test`
 
@@ -39,32 +63,26 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Learn More About React
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+As this being a school project, And my personal site, it is not open for contributions.
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To get in contact with me regarding this project, please use one of the below options:
 
-### Making a Progressive Web App
+- [My LinkedIn page](https://www.linkedin.com/in/kjell-arne-neshagen-83152222b/)
+- [My Github Profile](https://github.com/Sovak3441)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Noroff](https://www.noroff.no/en)
+- [freecodecamp](https://www.freecodecamp.com)
+- [Web Dev Simplified](https://courses.webdevsimplified.com/)
+- [Udemy](https://www.udemy.com/)

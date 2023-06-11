@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -15,16 +16,13 @@ const LogoContainer = styled.div`
   ${tw`flex items-center`}
 `;
 
-const Logo = styled.img`
-  ${tw`h-6 w-auto`}
-`;
-
 const BrandName = styled.h1`
   ${tw`ml-2 text-white font-bold text-lg`}
 `;
 
 const Menu = styled.div`
-  ${tw`hidden sm:flex items-center`}
+  ${tw`sm:flex sm:flex-row sm:bg-transparent sm:static flex-col items-center absolute right-0 top-16 bg-[#35045C]`}
+  ${props => !props.menuOpen && tw`hidden sm:flex`}
 `;
 
 const MenuLink = styled.a`
@@ -39,35 +37,42 @@ const Hamburger = styled(FaBars)`
 `;
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleMobileMenu = () => {
-
+    setMenuOpen(!menuOpen);
+    console.log(menuOpen);
   }
+  const handleLinkClick = () => {
+    if (!menuOpen) return; // Return if menu is already closed on small screens
+    setMenuOpen(false);
+  };
   return (
-    <>
-      <Header>
-      <Nav>
-        <LogoContainer>
-          <Logo src="/path/to/logo.png" alt="Logo" />
-          <BrandName>Kjell-Arne Neshagen</BrandName>
-        </LogoContainer>
-        <Menu>
-          <MenuLink href="/">
-            Home
-          </MenuLink>
-          <MenuLink href="#about">
-            About
-          </MenuLink>
-          <MenuLink href="#portfolio">
-            Portfolio
-          </MenuLink>
-          <MenuLink href="#contact">
-            Contact
-          </MenuLink>
-        </Menu>
-        <Hamburger onClick={handleMobileMenu} />
-      </Nav>
-      </Header>
-    </>
+      <>
+        <Header>
+          <Nav>
+            <LogoContainer>
+              <BrandName>Kjell-Arne Neshagen</BrandName>
+            </LogoContainer>
+
+            <Menu menuOpen={menuOpen ? 1 : 0}>
+              <MenuLink href="/">
+                Home
+              </MenuLink>
+              <MenuLink href="#about" onClick={handleLinkClick}>
+                About
+              </MenuLink>
+              <MenuLink href="#portfolio" onClick={handleLinkClick}>
+                Portfolio
+              </MenuLink>
+              <MenuLink href="#contact" onClick={handleLinkClick}>
+                Contact
+              </MenuLink>
+            </Menu>
+
+            <Hamburger onClick={handleMobileMenu} />
+          </Nav>
+        </Header>
+      </>
   );
 };
 
